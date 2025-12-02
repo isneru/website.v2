@@ -1,4 +1,13 @@
-import { MapPin } from 'lucide-react'
+import { GithubPixelatedIcon } from '@/components/icons/github'
+import { PinPixelatedIcon } from '@/components/icons/pin'
+import { Tooltip } from '@/components/tooltip-card'
+import {
+	BookOpenTextIcon,
+	GithubIcon,
+	LinkedinIcon,
+	MapPin
+} from 'lucide-react'
+import Link from 'next/link'
 
 export default async function Home() {
 	const username = 'isneru'
@@ -23,8 +32,17 @@ export default async function Home() {
 					<p className='text-white/50 select-none'>{info.bio}</p>
 				</div>
 				<span className='flex items-center gap-1 text-white/50 text-sm'>
-					<MapPin size={16} /> {info.location}
+					<PinPixelatedIcon width={16} height={16} />
+					{info.location}
 				</span>
+			</div>
+			<div className='flex gap-4 flex-col ml-auto'>
+				<Link
+					href='https://github.com/isneru'
+					className='text-white/50 hover:text-white transition-colors'
+					target='_blank'>
+					<GithubPixelatedIcon width={20} height={20} />
+				</Link>
 			</div>
 		</div>
 	)
